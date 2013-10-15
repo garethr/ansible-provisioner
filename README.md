@@ -1,3 +1,24 @@
+# Introduction
+
+Describe your infrastcuture in YML like this:
+
+    ---
+    droplets:
+      - name: development.web.1
+      - name: development.app.1
+      - name: development.db.1
+      - name: production.web.1
+        region: 2
+      - name: production.web.2
+      - name: production.app.1
+        region: 2
+      - name: production.app.2
+      - name: production.db.1
+        size: 65
+
+Run an ansible playbook to create droplets on Digital Ocean, and then run
+ansible to execute remote commands across groups of newly created machines.
+
 # Purpose
 
 This repository is mainly an exploration of Ansibles provisioning and
