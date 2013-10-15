@@ -1,0 +1,10 @@
+---
+droplets:
+  - name: development.web.1
+  - name: development.app.1
+  - name: development.db.1
+  - name: production.web.1
+  - name: production.web.2
+  - name: production.app.1
+  - name: production.app.2
+  - name: production.db.1

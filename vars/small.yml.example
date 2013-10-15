@@ -1,0 +1,3 @@
+---
+droplets:
+  - name: development.web.1

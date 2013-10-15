@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  gather_facts: False
+
+  vars_files:
+    - vars/custom.yml
+    - vars/droplets.yml
+
+  tasks:
+    - include: tasks/create_droplet.yml droplets={{droplets}}

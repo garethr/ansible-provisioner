@@ -1,0 +1,6 @@
+custom.yml
+droplets.yml
+defaults.yml
+!droplets.yml.example
+!defaults.yml.example
+!custom.yml.example
