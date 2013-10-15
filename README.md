@@ -1,6 +1,6 @@
 # Introduction
 
-Describe your infrastcuture in YML like this:
+Describe your infrastructure in YAML like this:
 
     ---
     droplets:
