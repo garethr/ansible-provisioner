@@ -16,6 +16,8 @@ end
 desc "Run serverspec on all hosts"
 task :spec => 'serverspec:all'
 
+task :default => [:spec]
+
 class ServerspecTask < RSpec::Core::RakeTask
   attr_accessor :target
   def spec_command
@@ -34,3 +36,4 @@ namespace :serverspec do
     end
   end
 end
+
