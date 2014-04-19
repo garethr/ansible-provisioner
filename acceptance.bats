@@ -11,10 +11,10 @@
   [ "$status" -eq 0 ]
 }
 
-@test "we can list hosts with ansible" {
-  run ansible -i hosts all --list-hosts
+@test "we can count the correct number hosts" {
+  run bash -c "ansible -i hosts all --list-hosts | wc -l | tr -d ' '"
   [ "$status" -eq 0 ]
-  [[ "${lines[1]}" == *"localhost"* ]]
+  [ "$output" -eq 2 ]
 }
 
 @test "we can list hosts with tugboat" {
@@ -22,6 +22,11 @@
   [ "$status" -eq 0 ]
   [[ "$output" == *"production.web.1"* ]]
   [[ "$output" == *"active"* ]]
+}
+
+@test "per host serverspec tests pass" {
+  run rake spec
+  [ "$status" -eq 0 ]
 }
 
 @test "clean up all droplets" {
